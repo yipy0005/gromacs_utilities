@@ -81,7 +81,7 @@ def print_to_file(txt_values: list[list[float]], output_file: Path) -> None:
             output.write(f"{x: 3.5f}\t{y: 3.5f}\t{z: 3.5f}\n")
 
 
-def xpm2txt(xpm_file: Path, column_sort: int = 9999) -> None:
+def xpm2txt(xpm_file: Path, output: Path, column_sort: int = 9999) -> None:
 
     parsed_data: tuple[list[str], Any, Any, Dict[str, float]] = parse_xpm(
         Path(xpm_file)
@@ -91,11 +91,11 @@ def xpm2txt(xpm_file: Path, column_sort: int = 9999) -> None:
     )
     if column_sort != 9999:
         apply_sorting(column_sort, matched_data)
-    print_to_file(matched_data, Path(args.o))
+    print_to_file(matched_data, Path(output))
 
 
 if __name__ == "__main__":
 
     args = MyArgumentParser().parse_args()
 
-    xpm2txt(args.f, args.s)
+    xpm2txt(args.f, args.o, args.s)

@@ -57,7 +57,7 @@ def calc_gibbs_fe() -> subprocess.CompletedProcess[bytes]:
 
 
 def convert_xpm_to_dat(column_sort: int = 9999) -> None:
-    return xpm2txt(Path("FES.xpm"), column_sort)
+    return xpm2txt(Path("FES.xpm"), Path("FEL.dat"), column_sort)
 
 
 def fel(
