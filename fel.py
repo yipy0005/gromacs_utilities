@@ -70,7 +70,7 @@ def fel(
     column_sort: int = 9999,
 ) -> None:
     postprocess(struct, traj)
-    struct = Path("md_fit.xtc")
+    traj = Path("md_fit.xtc")
     calc_covar_eigenvec_eigenval(traj, struct, eigenval, eigenvec, xpixmap)
     calc_pc1_pc2(traj, struct, eigenvec)
     concat_pc1_pc2()
