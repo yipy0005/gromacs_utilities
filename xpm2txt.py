@@ -78,7 +78,7 @@ def print_to_file(txt_values: list[list[float]], output_file: Path) -> None:
     # Print to output file
     with open(Path(output_file), "w") as output:
         for x, y, z in txt_values:
-            output.write(f"{x: 3.5f}\t{y: 3.5f}\t{z: 3.5f}")
+            output.write(f"{x: 3.5f}\t{y: 3.5f}\t{z: 3.5f}\n")
 
 
 def xpm2txt(xpm_file: Path, column_sort: int = 9999) -> None:
